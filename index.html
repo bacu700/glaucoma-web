@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recurso Educativo: Glaucoma</title>
+  <style>
+.hero-img {
+  margin-top: 20px;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ffffff;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5faff;
+      color: #333;
+    }
+    header {
+  background: linear-gradient(to bottom, #ff7f50, #800080, #006699);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+    header h1 {
+  font-weight: bold;
+  font-family: 'Cambria', serif;
+      font-size: 2.5em;
+      margin: 0;
+      line-height: 1.2;
+      background: linear-gradient(to right, #fcfcfc, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    nav {
+      background: #00334e;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+      font-family: 'Cambria', serif;
+    }
+    nav button:hover,
+    nav button.active {
+      background: #00557a;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    h2 {
+      color: #004e92;
+      font-size: 24px;
+    }
+    h3 {
+      color: #0072ff;
+      margin-top: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .quiz-container {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .terms, .definitions {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      min-width: 250px;
+    }
+    .term, .definition {
+      background: #ffffff;
+      border: 2px solid #0072ff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      width: 240px;
+      text-align: center;
+      user-select: none;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .definition {
+      background: #e3f2fd;
+    }
+    .term:hover, .term.selected {
+      background: #f0f8ff;
+      transform: scale(1.03);
+    }
+    .term.selected {
+      border: 2px solid #004e92;
+      background: #d4e6f7;
+    }
+    .definition.matched {
+      background: #e8f5e9;
+      border: 2px solid #4caf50;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+    }
+    .btn {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #0052cc, #0088cc);
+      transform: scale(1.05);
+    }
+    a button.btn {
+      text-decoration: none;
+    }
+    .instructions {
+      text-align: center;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .quiz-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .term, .definition {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+      <h1>Recurso Educativo sobre el Glaucoma</h1>
+      <img src="IMG1.png" alt="Ilustración del Glaucoma" class="hero-img" />
+  </header>
+
+  <nav>
+    <button id="infoTab" class="active" onclick="showSection('info')">Glaucoma</button>
+    <button id="gameTab" onclick="showSection('game')">MiniJuego</button>
+    <button id="vrTab" onclick="showSection('vr')">Realidad Virtual</button>
+  </nav>
+
+  <section id="info" style="display: block;">
+    <h2>¿Qué es el Glaucoma?</h2>
+    <p>
+      El glaucoma es un grupo de enfermedades oculares que dañan el nervio óptico, fundamental para una buena visión, y que pueden llevar a la ceguera si no se tratan a tiempo.
+    </p>
+    <p>
+      Esta enfermedad ocurre principalmente debido al aumento de la presión intraocular (la presión dentro del ojo), que puede dañar las fibras nerviosas y afectar la transmisión de señales visuales al cerebro.
+    </p>
+    <p>
+      El glaucoma suele desarrollarse lentamente y sin síntomas evidentes en sus etapas iniciales, por lo que es conocido como el "ladrón silencioso de la visión". La detección temprana mediante revisiones oftalmológicas es crucial para prevenir daño irreversible.
+    </p>
+    <h3>Tipos principales de glaucoma:</h3>
+    <ul>
+      <li><strong>Glaucoma de ángulo abierto:</strong> Es el tipo más común y ocurre cuando los canales de drenaje del ojo se bloquean gradualmente.</li>
+      <li><strong>Glaucoma de ángulo cerrado:</strong> Se produce cuando el ángulo entre el iris y la córnea se cierra, bloqueando el drenaje del líquido ocular.</li>
+      <li><strong>Glaucoma congénito:</strong> Presente al nacer debido a un desarrollo anormal del ojo.</li>
+    </ul>
+    <h3>Factores de riesgo:</h3>
+    <ul>
+      <li>Edad avanzada</li>
+      <li>Antecedentes familiares</li>
+      <li>Presión intraocular elevada</li>
+      <li>Diabetes y enfermedades cardiovasculares</li>
+      <li>Uso prolongado de corticosteroides</li>
+    </ul>
+    <p>
+      El tratamiento puede incluir medicamentos, láser o cirugía para reducir la presión intraocular y proteger el nervio óptico.
+    </p>
+  </section>
+
+  <section id="game" style="display: none;">
+    <h2>Juego: Une los conceptos</h2>
+    <p class="instructions">Selecciona un término y luego haz clic en la definición correspondiente.</p>
+    <div class="quiz-container">
+      <div class="terms">
+        <div class="term" data-id="term1">Presión intraocular</div>
+        <div class="term" data-id="term2">Nervio óptico</div>
+        <div class="term" data-id="term3">Glaucoma</div>
+        <div class="term" data-id="term4">Ángulo cerrado</div>
+        <div class="term" data-id="term5">Drenaje del ojo</div>
+        <div class="term" data-id="term6">Ladrón silencioso</div>
+      </div>
+      <div class="definitions">
+        <div class="definition" data-match="term1">Presión dentro del ojo que puede dañar el nervio óptico.</div>
+        <div class="definition" data-match="term2">Transmite la información visual desde el ojo al cerebro.</div>
+        <div class="definition" data-match="term3">Enfermedad ocular que puede causar pérdida de visión progresiva.</div>
+        <div class="definition" data-match="term4">Bloqueo repentino del drenaje del líquido ocular debido al cierre del ángulo entre iris y córnea.</div>
+        <div class="definition" data-match="term5">Canales que permiten que el líquido salga del ojo para mantener la presión adecuada.</div>
+        <div class="definition" data-match="term6">Apodo del glaucoma porque no presenta síntomas evidentes al inicio.</div>
+      </div>
+    </div>
+    <button class="btn" onclick="checkAnswers()">Verificar respuestas</button>
+    <div id="result"></div>
+  </section>
+
+  <section id="vr" style="display: none;">
+    <h2>Explora el modelo 3D del ojo</h2>
+    <p>Haz clic en el botón para ver el modelo en 3D con lentes de realidad virtual.</p>
+    <a href="https://sketchfab.com/models/aae8f63f507b44d8915877d02f91bba5/embed?autostart=1&cardboard=1&internal=1&tracking=0&ui_ar=0&ui_infos=0&ui_snapshots=1&ui_stop=0&ui_theatre=1&ui_watermark=0" target="_blank"><button class="btn">Ver en VR</button></a>
+  </section>
+
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('info').style.display = 'none';
+      document.getElementById('game').style.display = 'none';
+      document.getElementById('vr').style.display = 'none';
+
+      document.getElementById('infoTab').classList.remove('active');
+      document.getElementById('gameTab').classList.remove('active');
+      document.getElementById('vrTab').classList.remove('active');
+
+      document.getElementById(sectionId).style.display = 'block';
+
+      if (sectionId === 'info') {
+        document.getElementById('infoTab').classList.add('active');
+      } else if (sectionId === 'game') {
+        document.getElementById('gameTab').classList.add('active');
+      } else if (sectionId === 'vr') {
+        document.getElementById('vrTab').classList.add('active');
+      }
+    }
+
+    // Variables para el juego
+    let selectedTerm = null;
+    const matches = {};
+    
+    // Inicializar el juego
+    function initGame() {
+      // Limpiar selecciones
+      selectedTerm = null;
+      
+      // Agregar eventos a los términos
+      const terms = document.querySelectorAll('.term');
+      terms.forEach(term => {
+        term.classList.remove('selected');
+        term.addEventListener('click', selectTerm);
+      });
+      
+      // Agregar eventos a las definiciones
+      const definitions = document.querySelectorAll('.definition');
+      definitions.forEach(def => {
+        def.classList.remove('matched');
+        def.addEventListener('click', matchDefinition);
+      });
+    }
+    
+    // Seleccionar un término
+    function selectTerm(e) {
+      // Deseleccionar cualquier término previamente seleccionado
+      document.querySelectorAll('.term').forEach(term => {
+        term.classList.remove('selected');
+      });
+      
+      // Seleccionar el nuevo término
+      selectedTerm = e.target;
+      selectedTerm.classList.add('selected');
+    }
+    
+    // Emparejar con una definición
+    function matchDefinition(e) {
+      if (!selectedTerm) return;
+      
+      const definition = e.target;
+      const termId = selectedTerm.getAttribute('data-id');
+      const matchId = definition.getAttribute('data-match');
+      
+      // Verificar si ya está emparejado
+      if (matches[termId] === definition) {
+        // Si ya está emparejado, deshacer el emparejamiento
+        definition.classList.remove('matched');
+        delete matches[termId];
+      } else {
+        // Si no está emparejado, hacer el emparejamiento
+        // Limpiar cualquier emparejamiento previo para este término
+        if (matches[termId]) {
+          matches[termId].classList.remove('matched');
+        }
+        
+        // Limpiar cualquier emparejamiento previo para esta definición
+        Object.keys(matches).forEach(key => {
+          if (matches[key] === definition) {
+            matches[key].classList.remove('matched');
+            delete matches[key];
+          }
+        });
+        
+        // Establecer nuevo emparejamiento
+        matches[termId] = definition;
+        definition.classList.add('matched');
+      }
+      
+      // Deseleccionar el término
+      selectedTerm.classList.remove('selected');
+      selectedTerm = null;
+    }
+    
+    // Verificar respuestas
+    function checkAnswers() {
+      const definitions = document.querySelectorAll('.definition');
+      let correct = 0;
+      
+      definitions.forEach(def => {
+        const matchId = def.getAttribute('data-match');
+        if (matches[matchId] === def) {
+          correct++;
+        }
+      });
+      
+      const result = document.getElementById("result");
+      if (correct === definitions.length) {
+        result.textContent = "¡Correcto! Has unido todos los conceptos correctamente.";
+        result.style.color = "green";
+      } else {
+        result.textContent = `Algunas respuestas están incorrectas. Llevas ${correct} de ${definitions.length} correctas. Inténtalo de nuevo.`;
+        result.style.color = "red";
+      }
+    }
+    
+    // Inicializar el juego cuando se muestre la sección
+    document.getElementById('gameTab').addEventListener('click', initGame);
+  </script>
+</body>
+</html>
